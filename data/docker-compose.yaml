@@ -1,0 +1,17 @@
+version: '3'
+services:
+  nginx:
+    image: 'nginx:1.17.3'
+    container_name: 'nginx'
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/access_lists/:/etc/nginx/access_lists/
+      - ./nginx/log/:/var/log/nginx/
+    ports:
+      - 9000:9000
+      - 7100:7100
+    restart: always
+    environment:
+      - PREP_URL: ${PREP_URL}
+    command: /bin/bash -c "envsubst < /etc/nginx/conf.d/mysite.template > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"
+
