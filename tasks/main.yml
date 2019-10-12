@@ -96,10 +96,13 @@
     src: ../data/docker-compose.yaml
     dest: /home/{{ ansible_ssh_user }}/docker-compose.yaml
     mode: '0440'
-    owner: "ubuntu"
-    group: "ubuntu"
+    owner: "{{ ansible_ssh_user }}"
+    group: "{{ ansible_ssh_user }}"
 
 - name: "Copy over the nginx conf files"
   synchronize:
     src: ../data/nginx
     dest: /home/{{ ansible_ssh_user }}/
+    mode: '0440'
+    owner: "{{ ansible_ssh_user }}"
+    group: "{{ ansible_ssh_user }}"
