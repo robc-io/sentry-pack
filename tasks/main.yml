@@ -103,6 +103,3 @@
   synchronize:
     src: ../data/nginx
     dest: /home/{{ ansible_ssh_user }}/
-    mode: '0440'
-    owner: "{{ ansible_ssh_user }}"
-    group: "{{ ansible_ssh_user }}"
