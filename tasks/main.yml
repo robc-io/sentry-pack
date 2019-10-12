@@ -93,8 +93,8 @@
 
 - name: "Copy over the docker-compose file"
   copy:
-    src: ../data/docker-compose.yaml
-    dest: /home/{{ ansible_ssh_user }}/docker-compose.yaml
+    src: ../data/docker-compose.yml
+    dest: /home/{{ ansible_ssh_user }}/docker-compose.yml
     mode: '0440'
     owner: "{{ ansible_ssh_user }}"
     group: "{{ ansible_ssh_user }}"
