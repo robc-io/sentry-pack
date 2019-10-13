@@ -103,5 +103,3 @@
   synchronize:
     src: ../data/nginx
     dest: /home/{{ ansible_ssh_user }}/
-
-- name: "Set DNS records for
